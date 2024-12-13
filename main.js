@@ -1,14 +1,33 @@
-let randomNumber = Math.floor(Math.random() * 10)+1;
+// Generate a random number between 1 and 10
+let randomNumber = Math.floor(Math.random() * 10) + 1;
 
-let userGuess = prompt('Guess a number between 1 and 10:');
-userGuess = Number(userGuess);
+// Select elements
+const userGuessInput = document.getElementById('userGuess');
+const submitButton = document.getElementById('submitGuess');
+const messageDisplay = document.getElementById('message');
 
-while (userGuess !== randomNumber) {
-    if ( userGuess < randomNumber ) {
-        alert('Oops! You should go up.');
-    } else if (userGuess > randomNumber) {
-        alert('Oops! You should go down.');
+// Add event listener to the button
+submitButton.addEventListener('click', () => {
+    const userGuess = Number(userGuessInput.value); // Get the user's guess
+
+    // Check if the input is valid
+    if (!userGuess || userGuess < 1 || userGuess > 10) {
+        messageDisplay.textContent = 'Please enter a valid number between 1 and 10.';
+        return;
     }
-    userGuess = Number(prompt('Try again'));
-}
-alert('Congratulations! You guessed the correct number ;)');   
+
+    // Check the guess
+    if (userGuess < randomNumber) {
+        messageDisplay.textContent = 'Oops! You should go up.';
+    } else if (userGuess > randomNumber) {
+        messageDisplay.textContent = 'Oops! You should go down.';
+    } else {
+        messageDisplay.textContent = 'Congratulations! You guessed the correct number 😉';
+        // Disable input and button after a correct guess
+        userGuessInput.disabled = true;
+        submitButton.disabled = true;
+    }
+
+    // Clear the input field for the next guess
+    userGuessInput.value = '';
+});

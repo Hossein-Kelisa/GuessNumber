@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guess </title>
+    <title>Guess Number Game </title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Guess Number!</h1>
-  <button>click</button>
-  <input>
+    <h1>Guess the Number Game</h1>
+    <p>Guess a number between 1 and 10:</p>
+    <input type="number" id="userGuess" placeholder="Enter your guess" min="1" max="10">
+    <button id="submitGuess">Submit</button>
+    <p class="message" id="message"></p>
   <script src="main.js"></script>
 </body>
 </html>
