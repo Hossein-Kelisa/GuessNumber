@@ -5,6 +5,10 @@ let randomNumber = Math.floor(Math.random() * 10) + 1;
 const userGuessInput = document.getElementById('userGuess');
 const submitButton = document.getElementById('submitGuess');
 const messageDisplay = document.getElementById('message');
+const guessCountDisplay = document.getElementById('guessCount');
+
+// Initialize the guess counter
+let attempts = 0;
 
 // Add event listener to the button
 submitButton.addEventListener('click', () => {
@@ -15,6 +19,10 @@ submitButton.addEventListener('click', () => {
         messageDisplay.textContent = 'Please enter a valid number between 1 and 10.';
         return;
     }
+
+     // Increment and display the guess counter
+     attempts++;
+     guessCountDisplay.textContent = attempts;
 
     // Check the guess
     if (userGuess < randomNumber) {

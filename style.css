@@ -9,7 +9,7 @@ body {
 
 /* Heading style */
 h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     color: #444;
     margin-bottom: 20px;
 }
@@ -27,6 +27,9 @@ input, button {
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
+}
+input {
+    width: 300px;
 }
 
 /* Button specific styling */
@@ -46,4 +49,15 @@ button:hover {
     font-size: 1.2rem;
     margin-top: 20px;
     color: #555;
+}
+.total{
+    font-weight: bold;
+    color: #297af3; 
+    font-size: 2rem;
+    margin: 50px;
+}
+.text{
+    color: #3e4083;
+    margin-top: 70px;
+    margin-bottom: 40px;
 }
